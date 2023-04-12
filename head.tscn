@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpyy3siosrdr0"]
+
+[ext_resource type="PackedScene" uid="uid://b6aek4hn0baxm" path="res://head.dae" id="1_w70ny"]
+
+[node name="Head" type="Node3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="head" parent="." instance=ExtResource("1_w70ny")]
+transform = Transform3D(0.868871, 0, 0, 0, 0.868871, 0, 0, 0, 0.868871, 0, 0, 0)

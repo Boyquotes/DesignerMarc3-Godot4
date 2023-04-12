@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjgaqiutd0ha5"]
+
+[ext_resource type="PackedScene" uid="uid://cpyy3siosrdr0" path="res://head.tscn" id="1_7wifk"]
+[ext_resource type="PackedScene" uid="uid://crt1amv4xxhwg" path="res://control.tscn" id="1_8adpc"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SphereNode" type="Node3D" parent="."]
+transform = Transform3D(4.20734, 0, 0, 0, 4.20734, 0, 0, 0, 4.20734, 0, 0, 0)
+
+[node name="Sphere" type="CSGSphere3D" parent="SphereNode"]
+radial_segments = 14
+rings = 15
+smooth_faces = false
+
+[node name="HeadNodeOrient" type="Node3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, 8.74228e-08, 1, 8.74228e-08, 7.64274e-15, 8.74228e-08, -1, 0, 0, 0)
+
+[node name="HeadNode" type="Node3D" parent="HeadNodeOrient"]
+rotation_order = 0
+
+[node name="Head" parent="HeadNodeOrient/HeadNode" instance=ExtResource("1_7wifk")]
+transform = Transform3D(-0.1, 6.6815e-23, -1.50996e-08, -4.31869e-16, 0.1, 0, 1.50996e-08, 0, -0.1, 0, 2, 0)
+
+[node name="CameraLightNode" type="Node3D" parent="."]
+transform = Transform3D(0.75266, -0.327854, 0.570977, 0.0596172, 0.897579, 0.436802, -0.655704, -0.294723, 0.695118, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraLightNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+fov = 39.692
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CameraLightNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.38683)
+
+[node name="Control" parent="." instance=ExtResource("1_8adpc")]

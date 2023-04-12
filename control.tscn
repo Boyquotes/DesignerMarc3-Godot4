@@ -1,0 +1,128 @@
+[gd_scene load_steps=2 format=3 uid="uid://crt1amv4xxhwg"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_lgpgg"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lgpgg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -328.0
+offset_top = 43.0
+offset_right = -42.0
+offset_bottom = 262.0
+grow_horizontal = 0
+
+[node name="X" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="plus" type="Button" parent="VBoxContainer/X"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+action_mode = 0
+text = "X +"
+
+[node name="minus" type="Button" parent="VBoxContainer/X"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "X -"
+
+[node name="XSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+max_value = 360.0
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Y" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="plus" type="Button" parent="VBoxContainer/Y"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Y +"
+
+[node name="minus" type="Button" parent="VBoxContainer/Y"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Y -"
+
+[node name="YSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+max_value = 360.0
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Z" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="plus" type="Button" parent="VBoxContainer/Z"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Z +"
+
+[node name="minus" type="Button" parent="VBoxContainer/Z"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Z -"
+
+[node name="ZSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+max_value = 360.0
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Labels" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+columns = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="posX_" type="Label" parent="VBoxContainer/Labels"]
+layout_mode = 2
+text = "X Axis Angle:"
+
+[node name="posX" type="Label" parent="VBoxContainer/Labels"]
+layout_mode = 2
+
+[node name="posY_" type="Label" parent="VBoxContainer/Labels"]
+layout_mode = 2
+text = "Y Axis Angle:"
+
+[node name="posY" type="Label" parent="VBoxContainer/Labels"]
+layout_mode = 2
+
+[node name="posZ_" type="Label" parent="VBoxContainer/Labels"]
+layout_mode = 2
+text = "Z Axis Angle:"
+
+[node name="posZ" type="Label" parent="VBoxContainer/Labels"]
+layout_mode = 2

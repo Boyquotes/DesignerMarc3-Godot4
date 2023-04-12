@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=DesignerMarc3-Linux-latest
+Exec=/home/admin/Desktop/DesignerMarc3-Linux/DesignerMarc3.sh
+Terminal=false
+Icon=/home/admin/DesignerMarc3.svg
+Type=Application
