@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://bqrljvs86tiba"]
 
 [ext_resource type="Script" path="res://control/control.gd" id="1_lgpgg"]
 [ext_resource type="Script" path="res://control/HSlider.gd" id="2_5aa0h"]
+[ext_resource type="Script" path="res://control/HideXRing.gd" id="2_u4byf"]
+[ext_resource type="Script" path="res://control/HideYRing.gd" id="3_0kchm"]
 [ext_resource type="Script" path="res://control/VSlider.gd" id="3_sil8b"]
+[ext_resource type="Script" path="res://control/HideZDisc.gd" id="4_vdxxc"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -128,6 +131,24 @@ text = "Z Axis Angle:"
 
 [node name="posZ" type="Label" parent="VBoxContainer/Labels"]
 layout_mode = 2
+
+[node name="HideXRing" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Hide X Ring"
+script = ExtResource("2_u4byf")
+
+[node name="HideYRing" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Hide X Ring"
+script = ExtResource("3_0kchm")
+
+[node name="HideZDisc" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Hide X Ring"
+script = ExtResource("4_vdxxc")
 
 [node name="HSlider" type="HSlider" parent="."]
 layout_mode = 1
