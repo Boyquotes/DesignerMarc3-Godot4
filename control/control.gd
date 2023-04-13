@@ -1,6 +1,9 @@
 extends Control
 
 @onready var HeadNode = get_node("/root/Node3D/HeadNodeOrient/HeadNode")
+@onready var XRingNode = get_node("/root/Node3D/XRingOrient/XRingNode")
+@onready var YRingNode = get_node("/root/Node3D/YRingOrient/YRingNode")
+@onready var ZDiscNode = get_node("/root/Node3D/ZDiscOrient/DiscNode")
 
 func _ready():
 	# connect buttons
@@ -35,17 +38,17 @@ func _button_pressed(axis: String, increment: int = 1):
 	else:
 		pass
 	HeadNode.set_rotation_degrees(angles)
-	_sync_slider()
+	_sync()
 
 # when slider value changes
-func _slider(value: float, axis: String):
+func _slider(val: float, axis: String):
 	var angles = HeadNode.get_rotation_degrees()
 	if (axis == "x"):
-		angles.x = value
+		angles.x = val
 	elif (axis == "y"):
-		angles.y = value
+		angles.y = val
 	elif (axis == "z"):
-		angles.z = value
+		angles.z = val
 	else:
 		pass
 	HeadNode.set_rotation_degrees(angles)
@@ -70,14 +73,23 @@ func _angles_bound():
 	HeadNode.set_rotation_degrees(angles)
 	
 # sync slider and angle value
-func _sync_slider():
+func _sync():
 	var angles = HeadNode.get_rotation_degrees()
 	($VBoxContainer/XSlider).value = angles.x
 	($VBoxContainer/YSlider).value = angles.y
 	($VBoxContainer/ZSlider).value = angles.z
+	
+	XRingNode.posx = angles.x
+	
+	YRingNode.posx = angles.x
+	YRingNode.posy = angles.y
+	
+	ZDiscNode.posx = angles.x
+	ZDiscNode.posy = angles.y
+	ZDiscNode.posz = angles.z
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	_set_labels()
 	_angles_bound()
-	_sync_slider()
+	_sync()

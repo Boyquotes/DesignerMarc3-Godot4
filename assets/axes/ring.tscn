@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3c48vsf4tppp"]
+
+[ext_resource type="Script" path="res://assets/axes/ring.gd" id="1_c06s4"]
+
+[node name="RingNode" type="Node3D"]
+script = ExtResource("1_c06s4")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -2.62268e-07, -1, 0, 6, -4.37114e-08, 0, 0, 0)
+inner_radius = 1.0
+outer_radius = 1.05
+sides = 30
+ring_sides = 12

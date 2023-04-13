@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://crt1amv4xxhwg"]
+[gd_scene load_steps=4 format=3]
 
-[ext_resource type="Script" path="res://control.gd" id="1_lgpgg"]
+[ext_resource type="Script" path="res://control/control.gd" id="1_lgpgg"]
+[ext_resource type="Script" path="res://control/HSlider.gd" id="2_5aa0h"]
+[ext_resource type="Script" path="res://control/VSlider.gd" id="3_sil8b"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -126,3 +128,37 @@ text = "Z Axis Angle:"
 
 [node name="posZ" type="Label" parent="VBoxContainer/Labels"]
 layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -327.0
+offset_top = -40.0
+offset_right = 393.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+min_value = -360.0
+max_value = 360.0
+script = ExtResource("2_5aa0h")
+
+[node name="VSlider" type="VSlider" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -449.0
+offset_top = -188.0
+offset_right = -424.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = -360.0
+max_value = 360.0
+script = ExtResource("3_sil8b")

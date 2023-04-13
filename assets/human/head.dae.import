@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b6aek4hn0baxm"
-path="res://.godot/imported/head.dae-e5356a943cd3ec2878033c77226b47d4.scn"
+path="res://.godot/imported/head.dae-4b9cce97b90c0d83c46e988d5ca8b503.scn"
 
 [deps]
 
-source_file="res://head.dae"
-dest_files=["res://.godot/imported/head.dae-e5356a943cd3ec2878033c77226b47d4.scn"]
+source_file="res://assets/human/head.dae"
+dest_files=["res://.godot/imported/head.dae-4b9cce97b90c0d83c46e988d5ca8b503.scn"]
 
 [params]
 

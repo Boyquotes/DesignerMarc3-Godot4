@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjgaqiutd0ha5"]
+[gd_scene load_steps=5 format=3 uid="uid://doobyttm5mujj"]
 
-[ext_resource type="PackedScene" uid="uid://cpyy3siosrdr0" path="res://head.tscn" id="1_7wifk"]
-[ext_resource type="PackedScene" uid="uid://crt1amv4xxhwg" path="res://control.tscn" id="1_8adpc"]
+[ext_resource type="PackedScene" path="res://assets/human/head.tscn" id="1_7wifk"]
+[ext_resource type="PackedScene" path="res://control/control.tscn" id="1_8adpc"]
+[ext_resource type="PackedScene" uid="uid://d3c48vsf4tppp" path="res://assets/axes/ring.tscn" id="3_qtbef"]
+[ext_resource type="PackedScene" uid="uid://22dpna1w3nr0" path="res://assets/axes/disc.tscn" id="4_tld34"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -27,9 +29,36 @@ transform = Transform3D(0.75266, -0.327854, 0.570977, 0.0596172, 0.897579, 0.436
 
 [node name="Camera3D" type="Camera3D" parent="CameraLightNode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
-fov = 39.692
+fov = 48.2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="CameraLightNode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.38683)
 
 [node name="Control" parent="." instance=ExtResource("1_8adpc")]
+
+[node name="XRingOrient" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="XRingNode" parent="XRingOrient" instance=ExtResource("3_qtbef")]
+transform = Transform3D(2.77599, 0, 0, 0, 2.77599, 0, 0, 0, 2.77599, 0, 0, 0)
+rotation_order = 0
+color = Color(0.933333, 0.282353, 0.392157, 1)
+
+[node name="YRingOrient" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="YRingNode" parent="YRingOrient" instance=ExtResource("3_qtbef")]
+transform = Transform3D(2.58, 0, 0, 0, 2.58, 0, 0, 0, 2.58, 0, 0, 0)
+rotation_order = 0
+color = Color(0.556863, 0.827451, 0.117647, 1)
+
+[node name="ZDiscOrient" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="DiscNode" parent="ZDiscOrient" instance=ExtResource("4_tld34")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+rotation_order = 0
+color = Color(0.176471, 0.556863, 0.956863, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.66387, 0, 0)

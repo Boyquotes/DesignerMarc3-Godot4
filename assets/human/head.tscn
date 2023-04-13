@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpyy3siosrdr0"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="PackedScene" uid="uid://b6aek4hn0baxm" path="res://head.dae" id="1_w70ny"]
+[ext_resource type="PackedScene" uid="uid://b6aek4hn0baxm" path="res://assets/human/head.dae" id="1_w70ny"]
 
 [node name="Head" type="Node3D"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
