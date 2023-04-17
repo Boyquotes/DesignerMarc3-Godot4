@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://doobyttm5mujj"]
+[gd_scene load_steps=8 format=3 uid="uid://btomm3yhsf22c"]
 
 [ext_resource type="PackedScene" path="res://assets/human/head.tscn" id="1_7wifk"]
 [ext_resource type="PackedScene" uid="uid://bqrljvs86tiba" path="res://control/control.tscn" id="1_8adpc"]
@@ -15,6 +15,8 @@ albedo_color = Color(0.984314, 0.980392, 0.890196, 1)
 albedo_color = Color(0.984314, 0.980392, 0.890196, 1)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="Control" parent="." instance=ExtResource("1_8adpc")]
 
 [node name="SphereNode" type="Node3D" parent="."]
 transform = Transform3D(4.20734, 0, 0, 0, 4.20734, 0, 0, 0, 4.20734, 0, 0, 0)
@@ -42,8 +44,6 @@ fov = 48.2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="CameraLightNode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.38683)
-
-[node name="Control" parent="." instance=ExtResource("1_8adpc")]
 
 [node name="XRingOrient" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

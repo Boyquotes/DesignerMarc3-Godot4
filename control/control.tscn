@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqrljvs86tiba"]
+[gd_scene load_steps=8 format=3 uid="uid://bqrljvs86tiba"]
 
 [ext_resource type="Script" path="res://control/control.gd" id="1_lgpgg"]
 [ext_resource type="Script" path="res://control/HSlider.gd" id="2_5aa0h"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://control/HideYRing.gd" id="3_0kchm"]
 [ext_resource type="Script" path="res://control/VSlider.gd" id="3_sil8b"]
 [ext_resource type="Script" path="res://control/HideZDisc.gd" id="4_vdxxc"]
+[ext_resource type="Script" path="res://control/HideSphere.gd" id="5_hg1rs"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -141,14 +142,19 @@ script = ExtResource("2_u4byf")
 [node name="HideYRing" type="CheckBox" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Hide X Ring"
+text = "Hide Y Ring"
 script = ExtResource("3_0kchm")
 
 [node name="HideZDisc" type="CheckBox" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Hide X Ring"
+text = "Hide Z Disc"
 script = ExtResource("4_vdxxc")
+
+[node name="HideSphere" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+text = "Hide Sphere"
+script = ExtResource("5_hg1rs")
 
 [node name="HSlider" type="HSlider" parent="."]
 layout_mode = 1
