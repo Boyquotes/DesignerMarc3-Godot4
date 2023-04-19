@@ -7,17 +7,16 @@ extends Control
 
 func _ready():
 	# connect buttons
-	($VBoxContainer/X/plus).pressed.connect(_button_pressed.bind("x+"))
-	($VBoxContainer/X/minus).pressed.connect(_button_pressed.bind("x-"))
-	($VBoxContainer/Y/plus).pressed.connect(_button_pressed.bind("y+"))
-	($VBoxContainer/Y/minus).pressed.connect(_button_pressed.bind("y-"))
-	($VBoxContainer/Z/plus).pressed.connect(_button_pressed.bind("z+"))
-	($VBoxContainer/Z/minus).pressed.connect(_button_pressed.bind("z-"))
-
+	($Setter/X/plus).pressed.connect(_button_pressed.bind("x+"))
+	($Setter/X/minus).pressed.connect(_button_pressed.bind("x-"))
+	($Setter/Y/plus).pressed.connect(_button_pressed.bind("y+"))
+	($Setter/Y/minus).pressed.connect(_button_pressed.bind("y-"))
+	($Setter/Z/plus).pressed.connect(_button_pressed.bind("z+"))
+	($Setter/Z/minus).pressed.connect(_button_pressed.bind("z-"))
 	# connect sliders
-	($VBoxContainer/XSlider).value_changed.connect(_slider.bind("x"))
-	($VBoxContainer/YSlider).value_changed.connect(_slider.bind("y"))
-	($VBoxContainer/ZSlider).value_changed.connect(_slider.bind("z"))
+	($Setter/X/slider).value_changed.connect(_slider.bind("x"))
+	($Setter/Y/slider).value_changed.connect(_slider.bind("y"))
+	($Setter/Z/slider).value_changed.connect(_slider.bind("z"))
 	
 
 # when button is pressed
@@ -57,9 +56,9 @@ func _slider(val: float, axis: String):
 func _set_labels():
 	var v = HeadNode.get_rotation_degrees()
 	# update labels
-	($VBoxContainer/Labels/posX).text = str(round(v.x))
-	($VBoxContainer/Labels/posY).text = str(round(v.y))
-	($VBoxContainer/Labels/posZ).text = str(round(v.z))
+	($Setter/X/value).text = str("%5d" % v.x)
+	($Setter/Y/value).text = str("%5d" % v.y)
+	($Setter/Z/value).text = str("%5d" % v.z)
 	
 # reset angles if out of 0 to 360
 func _angles_bound():
@@ -75,20 +74,19 @@ func _angles_bound():
 # sync slider and angle value
 func _sync():
 	var angles = HeadNode.get_rotation_degrees()
-	($VBoxContainer/XSlider).value = angles.x
-	($VBoxContainer/YSlider).value = angles.y
-	($VBoxContainer/ZSlider).value = angles.z
-	
+	($Setter/X/slider).value = angles.x
+	($Setter/Y/slider).value = angles.y
+	($Setter/Z/slider).value = angles.z
+	# xring
 	XRingNode.posx = angles.x
-	
+	# yring
 	YRingNode.posx = angles.x
 	YRingNode.posy = angles.y
-	
+	# zdisc
 	ZDiscNode.posx = angles.x
 	ZDiscNode.posy = angles.y
 	ZDiscNode.posz = angles.z
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	_set_labels()
 	_angles_bound()

@@ -1,0 +1,247 @@
+[gd_scene load_steps=5 format=3 uid="uid://1roha43d2hbo"]
+
+[ext_resource type="Script" path="res://gui/gui.gd" id="1_xw4mk"]
+[ext_resource type="PackedScene" uid="uid://mskyr3cl7qde" path="res://gui/view_control/view_control.tscn" id="3_dpshq"]
+[ext_resource type="PackedScene" uid="uid://bs0mxa346knyq" path="res://gui/hide_buttons/hide_buttons.tscn" id="4_5671h"]
+[ext_resource type="PackedScene" uid="uid://bhlwwu8e1pmpt" path="res://gui/table/table.tscn" id="4_uk1q0"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xw4mk")
+
+[node name="ViewControls" parent="." instance=ExtResource("3_dpshq")]
+layout_mode = 1
+
+[node name="HideButtons" parent="." instance=ExtResource("4_5671h")]
+layout_mode = 1
+
+[node name="Setter" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -322.0
+offset_top = 370.0
+offset_right = -22.0
+offset_bottom = 630.0
+grow_horizontal = 0
+
+[node name="HSeparator" type="HSeparator" parent="Setter"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="X" type="HBoxContainer" parent="Setter"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="Setter/X"]
+layout_mode = 2
+text = "Pos X:  "
+
+[node name="slider" type="HSlider" parent="Setter/X"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 360.0
+
+[node name="minus" type="Button" parent="Setter/X"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "–"
+
+[node name="plus" type="Button" parent="Setter/X"]
+layout_mode = 2
+size_flags_vertical = 0
+action_mode = 0
+text = "+"
+
+[node name="value" type="Label" parent="Setter/X"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="units" type="Label" parent="Setter/X"]
+layout_mode = 2
+text = "º"
+
+[node name="Y" type="HBoxContainer" parent="Setter"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="Setter/Y"]
+layout_mode = 2
+text = "Pos Y:  "
+
+[node name="slider" type="HSlider" parent="Setter/Y"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 360.0
+
+[node name="minus" type="Button" parent="Setter/Y"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "–"
+
+[node name="plus" type="Button" parent="Setter/Y"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "+"
+
+[node name="value" type="Label" parent="Setter/Y"]
+layout_mode = 2
+
+[node name="units" type="Label" parent="Setter/Y"]
+layout_mode = 2
+text = "º"
+
+[node name="Z" type="HBoxContainer" parent="Setter"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="Setter/Z"]
+layout_mode = 2
+text = "Pos X:  "
+
+[node name="slider" type="HSlider" parent="Setter/Z"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 360.0
+
+[node name="minus" type="Button" parent="Setter/Z"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "–"
+
+[node name="plus" type="Button" parent="Setter/Z"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "+"
+
+[node name="value" type="Label" parent="Setter/Z"]
+layout_mode = 2
+
+[node name="units" type="Label" parent="Setter/Z"]
+layout_mode = 2
+text = "º"
+
+[node name="HSeparator2" type="HSeparator" parent="Setter"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="labels" type="HBoxContainer" parent="Setter"]
+layout_mode = 2
+
+[node name="label1" type="Label" parent="Setter/labels"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Vel (º/s)"
+
+[node name="label2" type="Label" parent="Setter/labels"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Acc (º/s²)"
+
+[node name="label3" type="Label" parent="Setter/labels"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Dec (º/s²)"
+
+[node name="XOthers" type="HBoxContainer" parent="Setter"]
+layout_mode = 2
+
+[node name="vel" type="SpinBox" parent="Setter/XOthers"]
+layout_mode = 2
+max_value = 120.0
+rounded = true
+prefix = "X: "
+
+[node name="VSeparator" type="VSeparator" parent="Setter/XOthers"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="acc" type="SpinBox" parent="Setter/XOthers"]
+layout_mode = 2
+max_value = 120.0
+rounded = true
+prefix = "X: "
+
+[node name="VSeparator2" type="VSeparator" parent="Setter/XOthers"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="dec" type="SpinBox" parent="Setter/XOthers"]
+layout_mode = 2
+max_value = 120.0
+rounded = true
+prefix = "X: "
+
+[node name="YOthers" type="HBoxContainer" parent="Setter"]
+layout_mode = 2
+
+[node name="vel" type="SpinBox" parent="Setter/YOthers"]
+layout_mode = 2
+max_value = 120.0
+rounded = true
+prefix = "Y: "
+
+[node name="VSeparator" type="VSeparator" parent="Setter/YOthers"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="acc" type="SpinBox" parent="Setter/YOthers"]
+layout_mode = 2
+max_value = 120.0
+rounded = true
+prefix = "Y: "
+
+[node name="VSeparator2" type="VSeparator" parent="Setter/YOthers"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="dec" type="SpinBox" parent="Setter/YOthers"]
+layout_mode = 2
+max_value = 120.0
+rounded = true
+prefix = "Y: "
+
+[node name="ZOthers" type="HBoxContainer" parent="Setter"]
+layout_mode = 2
+
+[node name="vel" type="SpinBox" parent="Setter/ZOthers"]
+layout_mode = 2
+max_value = 120.0
+rounded = true
+prefix = "Z: "
+
+[node name="VSeparator" type="VSeparator" parent="Setter/ZOthers"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="acc" type="SpinBox" parent="Setter/ZOthers"]
+layout_mode = 2
+max_value = 120.0
+rounded = true
+prefix = "Z: "
+
+[node name="VSeparator2" type="VSeparator" parent="Setter/ZOthers"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="dec" type="SpinBox" parent="Setter/ZOthers"]
+layout_mode = 2
+max_value = 120.0
+rounded = true
+prefix = "Z: "
+
+[node name="HSeparator3" type="HSeparator" parent="Setter"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Table" parent="." instance=ExtResource("4_uk1q0")]
+layout_mode = 1

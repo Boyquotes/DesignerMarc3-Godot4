@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs0mxa346knyq"]
+
+[ext_resource type="Script" path="res://gui/hide_buttons/hide_buttons.gd" id="1_hlnbh"]
+
+[node name="HideButtons" type="VBoxContainer"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 138.0
+offset_bottom = 151.0
+script = ExtResource("1_hlnbh")
+
+[node name="HideXRing" type="CheckBox" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Hide X Ring"
+
+[node name="HideYRing" type="CheckBox" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Hide Y Ring"
+
+[node name="HideZDisc" type="CheckBox" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Hide Z Disc"
+
+[node name="HideSphere" type="CheckBox" parent="."]
+layout_mode = 2
+text = "Hide Sphere"

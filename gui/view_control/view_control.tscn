@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://mskyr3cl7qde"]
+
+[ext_resource type="Script" path="res://gui/view_control/view_control.gd" id="1_6ubrj"]
+
+[node name="ViewControl" type="Control"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_6ubrj")
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -440.0
+offset_top = -35.0
+offset_right = 440.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+min_value = -360.0
+max_value = 360.0
+
+[node name="VSlider" type="VSlider" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -473.0
+offset_top = -639.0
+offset_right = -457.0
+offset_bottom = -89.0
+grow_vertical = 2
+min_value = -360.0
+max_value = 360.0

@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://btomm3yhsf22c"]
+[gd_scene load_steps=8 format=3 uid="uid://3p344fu7rmyj"]
 
 [ext_resource type="PackedScene" path="res://assets/human/head.tscn" id="1_7wifk"]
-[ext_resource type="PackedScene" uid="uid://bqrljvs86tiba" path="res://control/control.tscn" id="1_8adpc"]
+[ext_resource type="PackedScene" uid="uid://1roha43d2hbo" path="res://gui/gui.tscn" id="1_8adpc"]
 [ext_resource type="PackedScene" uid="uid://d3c48vsf4tppp" path="res://assets/axes/ring.tscn" id="3_qtbef"]
 [ext_resource type="PackedScene" uid="uid://22dpna1w3nr0" path="res://assets/axes/disc.tscn" id="4_tld34"]
 
@@ -16,14 +16,14 @@ albedo_color = Color(0.984314, 0.980392, 0.890196, 1)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Control" parent="." instance=ExtResource("1_8adpc")]
+[node name="GUI" parent="." instance=ExtResource("1_8adpc")]
 
 [node name="SphereNode" type="Node3D" parent="."]
 transform = Transform3D(4.20734, 0, 0, 0, 4.20734, 0, 0, 0, 4.20734, 0, 0, 0)
 
 [node name="Sphere" type="CSGSphere3D" parent="SphereNode"]
-radial_segments = 14
-rings = 15
+radial_segments = 36
+rings = 36
 smooth_faces = false
 
 [node name="HeadNodeOrient" type="Node3D" parent="."]
