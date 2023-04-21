@@ -173,12 +173,37 @@ func _clear_button_pressed():
 	saveButton.disabled = true
 	
 func _import_button_pressed():
-	pass
+	var importDialog : FileDialog = get_node("/root/Node3D/GUI/FileDialog/Import")
+	importDialog.show()
+	importDialog.file_selected.connect(_on_import_file_selected)
 
 func _export_button_pressed():
 	var exportDialog : FileDialog = get_node("/root/Node3D/GUI/FileDialog/Export")
 	exportDialog.show()
 	exportDialog.file_selected.connect(_on_export_file_selected)
+	
+func _on_import_file_selected(_path):
+	var importCSV = ImportTable.new()
+	importCSV.set_file(_path)
+	importCSV.from_csv()
+	var data : Dictionary = importCSV.get_tree_data()
+	for idx in data:
+		xslider.value = int(data[idx]["X"]["pos"])
+		yslider.value = int(data[idx]["Y"]["pos"])
+		zslider.value = int(data[idx]["Z"]["pos"])
+		xvel.value = int(data[idx]["X"]["vel"])
+		yvel.value = int(data[idx]["Y"]["vel"])
+		zvel.value = int(data[idx]["Z"]["vel"])
+		xacc.value = int(data[idx]["X"]["acc"])
+		yacc.value = int(data[idx]["Y"]["acc"])
+		zacc.value = int(data[idx]["Z"]["acc"])
+		xdec.value = int(data[idx]["X"]["dec"])
+		ydec.value = int(data[idx]["Y"]["dec"])
+		zdec.value = int(data[idx]["Z"]["dec"])
+		duration.value = int(data[idx]["X"]["dur"])
+		duration.value = int(data[idx]["Y"]["dur"])
+		duration.value = int(data[idx]["Z"]["dur"])
+		_add_button_pressed()
 
 func _on_export_file_selected(_path):
 	var exportCSV = ExportTable.new()

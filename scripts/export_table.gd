@@ -35,4 +35,3 @@ func to_csv():
 			row.append(pos.get_text(axes[axis]))
 			row.append(dur.get_text(axes[axis]))
 			self.file.store_csv_line(row)
-	self.file.close()
