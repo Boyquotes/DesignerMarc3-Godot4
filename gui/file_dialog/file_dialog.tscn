@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://fqj4cpckpwfb"]
+
+[node name="FileDialog" type="Node"]
+
+[node name="Import" type="FileDialog" parent="."]
+title = "Import CSV"
+position = Vector2i(350, 150)
+size = Vector2i(640, 480)
+popup_window = true
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.csv")
+
+[node name="Export" type="FileDialog" parent="."]
+title = "Export CSV"
+position = Vector2i(350, 150)
+size = Vector2i(640, 480)
+popup_window = true
+access = 2
+filters = PackedStringArray("*.csv")
