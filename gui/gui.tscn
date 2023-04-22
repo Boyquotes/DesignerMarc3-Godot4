@@ -104,7 +104,7 @@ layout_mode = 2
 
 [node name="label" type="Label" parent="Setter/Z"]
 layout_mode = 2
-text = "Pos X:  "
+text = "Pos Z:  "
 
 [node name="slider" type="HSlider" parent="Setter/Z"]
 layout_mode = 2
@@ -157,7 +157,9 @@ layout_mode = 2
 
 [node name="vel" type="SpinBox" parent="Setter/XOthers"]
 layout_mode = 2
+min_value = 1.0
 max_value = 120.0
+value = 1.0
 rounded = true
 prefix = "X: "
 
@@ -167,7 +169,9 @@ size_flags_horizontal = 3
 
 [node name="acc" type="SpinBox" parent="Setter/XOthers"]
 layout_mode = 2
+min_value = 1.0
 max_value = 120.0
+value = 1.0
 rounded = true
 prefix = "X: "
 
@@ -177,7 +181,9 @@ size_flags_horizontal = 3
 
 [node name="dec" type="SpinBox" parent="Setter/XOthers"]
 layout_mode = 2
+min_value = 1.0
 max_value = 120.0
+value = 1.0
 rounded = true
 prefix = "X: "
 
@@ -186,7 +192,9 @@ layout_mode = 2
 
 [node name="vel" type="SpinBox" parent="Setter/YOthers"]
 layout_mode = 2
+min_value = 1.0
 max_value = 120.0
+value = 1.0
 rounded = true
 prefix = "Y: "
 
@@ -196,7 +204,9 @@ size_flags_horizontal = 3
 
 [node name="acc" type="SpinBox" parent="Setter/YOthers"]
 layout_mode = 2
+min_value = 1.0
 max_value = 120.0
+value = 1.0
 rounded = true
 prefix = "Y: "
 
@@ -206,7 +216,9 @@ size_flags_horizontal = 3
 
 [node name="dec" type="SpinBox" parent="Setter/YOthers"]
 layout_mode = 2
+min_value = 1.0
 max_value = 120.0
+value = 1.0
 rounded = true
 prefix = "Y: "
 
@@ -215,7 +227,9 @@ layout_mode = 2
 
 [node name="vel" type="SpinBox" parent="Setter/ZOthers"]
 layout_mode = 2
+min_value = 1.0
 max_value = 120.0
+value = 1.0
 rounded = true
 prefix = "Z: "
 
@@ -225,7 +239,9 @@ size_flags_horizontal = 3
 
 [node name="acc" type="SpinBox" parent="Setter/ZOthers"]
 layout_mode = 2
+min_value = 1.0
 max_value = 120.0
+value = 1.0
 rounded = true
 prefix = "Z: "
 
@@ -235,7 +251,9 @@ size_flags_horizontal = 3
 
 [node name="dec" type="SpinBox" parent="Setter/ZOthers"]
 layout_mode = 2
+min_value = 1.0
 max_value = 120.0
+value = 1.0
 rounded = true
 prefix = "Z: "
 

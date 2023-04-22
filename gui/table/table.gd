@@ -22,6 +22,7 @@ extends VBoxContainer
 @onready var ydec : SpinBox = get_node("/root/Node3D/GUI/Setter/YOthers/dec")
 @onready var zdec : SpinBox = get_node("/root/Node3D/GUI/Setter/ZOthers/dec")
 @onready var duration : SpinBox = get_node("/root/Node3D/GUI/Setter/Common/duration")
+@onready var path : Node3D = get_node("/root/Node3D/Path")
 
 var selectedItem : TreeItem
 var root : TreeItem
@@ -101,6 +102,7 @@ func _add_button_pressed():
 		subchild2.set_text_alignment(i, HORIZONTAL_ALIGNMENT_CENTER)
 		subchild3.set_text_alignment(i, HORIZONTAL_ALIGNMENT_CENTER)
 		subchild4.set_text_alignment(i, HORIZONTAL_ALIGNMENT_CENTER)
+	_update_path()
 
 func _edit_button_pressed():
 	# get the selection
@@ -150,6 +152,7 @@ func _save_button_pressed():
 	selectedItem.get_child(3).set_text(3, str(duration.value))
 	selectedItem.get_child(3).set_text(4, str(duration.value))
 	_clear_button_pressed()
+	_update_path()
 
 func _delete_button_pressed():
 	# get the selection
@@ -164,6 +167,7 @@ func _delete_button_pressed():
 		currentItem.set_text(0, str(currentItem.get_index()))
 		currentItem = currentItem.get_next()
 	_clear_button_pressed()
+	_update_path()
 
 func _clear_button_pressed():
 	tree.deselect_all()
@@ -171,6 +175,14 @@ func _clear_button_pressed():
 	editButton.disabled = true
 	deleteButton.disabled = true
 	saveButton.disabled = true
+	
+func _update_path():
+	path.clear()
+	for i in range(root.get_child_count()):
+		var x = int(root.get_child(i).get_text(2))
+		var y = int(root.get_child(i).get_text(3))
+		var z = int(root.get_child(i).get_text(4))
+		path.add_point(x, y, z)
 	
 func _import_button_pressed():
 	var importDialog : FileDialog = get_node("/root/Node3D/GUI/FileDialog/Import")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://fjqqs0mtrk4b"]
+
+[ext_resource type="Script" path="res://line3d/line3d.gd" id="1_5r331"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75lde"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Line3D" type="Node3D"]
+script = ExtResource("1_5r331")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+visible = false
+radius = 0.03
+radial_segments = 20
+rings = 20
+material = SubResource("StandardMaterial3D_75lde")

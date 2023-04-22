@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://3p344fu7rmyj"]
+[gd_scene load_steps=10 format=3 uid="uid://crsn0oeyh6hyw"]
 
 [ext_resource type="PackedScene" path="res://assets/human/head.tscn" id="1_7wifk"]
 [ext_resource type="PackedScene" uid="uid://1roha43d2hbo" path="res://gui/gui.tscn" id="1_8adpc"]
 [ext_resource type="PackedScene" uid="uid://d3c48vsf4tppp" path="res://assets/axes/ring.tscn" id="3_qtbef"]
 [ext_resource type="PackedScene" uid="uid://22dpna1w3nr0" path="res://assets/axes/disc.tscn" id="4_tld34"]
+[ext_resource type="Script" path="res://scripts/path.gd" id="5_dcj73"]
+[ext_resource type="PackedScene" uid="uid://fjqqs0mtrk4b" path="res://line3d/line3d.tscn" id="5_snimm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bqmmu"]
 albedo_color = Color(0.984314, 0.980392, 0.890196, 1)
@@ -82,3 +84,8 @@ material = SubResource("StandardMaterial3D_6m3ai")
 [node name="BottomBox" type="CSGBox3D" parent="OuterBoxes"]
 transform = Transform3D(-2.15898e-08, -7.41779, 0, 0.493917, -3.24242e-07, 0, 0, 0, 2.26002, -0.00387239, -3.28515, 0)
 material = SubResource("StandardMaterial3D_mbmv7")
+
+[node name="Path" type="Node3D" parent="."]
+script = ExtResource("5_dcj73")
+
+[node name="Line3D" parent="Path" instance=ExtResource("5_snimm")]
